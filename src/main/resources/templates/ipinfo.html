@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informações de IP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        table {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h4 class="text-center">Busca de Ip</h4>
+    <form action="/ipinfo" method="get" class="mb-4">
+        <div class="mb-3">
+            <label for="ip" class="form-label">IP:</label>
+            <input type="text" id="ip" name="ip" class="form-control" >
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <h2 class="text-center">Informações de IP</h2>
+    <div th:if="${ipInfo != null}" class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <tbody>
+            <tr><th>Status</th><td th:text="${ipInfo.status}"></td></tr>
+            <tr><th>País</th><td th:text="${ipInfo.country}"></td></tr>
+            <tr><th>Código do País</th><td th:text="${ipInfo.countryCode}"></td></tr>
+            <tr><th>Região</th><td th:text="${ipInfo.region}"></td></tr>
+            <tr><th>Nome da Região</th><td th:text="${ipInfo.regionName}"></td></tr>
+            <tr><th>Cidade</th><td th:text="${ipInfo.city}"></td></tr>
+            <tr><th>CEP</th><td th:text="${ipInfo.zip}"></td></tr>
+            <tr><th>Latitude</th><td th:text="${ipInfo.lat}"></td></tr>
+            <tr><th>Longitude</th><td th:text="${ipInfo.lon}"></td></tr>
+            <tr><th>Fuso Horário</th><td th:text="${ipInfo.timezone}"></td></tr>
+            <tr><th>ISP</th><td th:text="${ipInfo.isp}"></td></tr>
+            <tr><th>Organização</th><td th:text="${ipInfo.org}"></td></tr>
+            <tr><th>AS</th><td th:text="${ipInfo.as}"></td></tr>
+            <tr><th>IP Consultado</th><td th:text="${ipInfo.query}"></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
