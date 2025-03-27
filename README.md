@@ -40,5 +40,3 @@ O projeto segue o padrão de arquitetura Model-View-Controller
 
 6. View renderiza o HTML com os resultados
 
-## desenvolvido por: 
-- Samuel Monteiro Ferreira
