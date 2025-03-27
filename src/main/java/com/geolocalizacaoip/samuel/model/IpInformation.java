@@ -3,7 +3,7 @@ package com.geolocalizacaoip.samuel.model;
 import lombok.Data;
 
 @Data
-public class IpInformation {
+public class IpInformation { //cada atributo corresponde a uma propriedade no JSON retornado pela API
     private String status;
     private String country;
     private String countryCode;
@@ -18,4 +18,5 @@ public class IpInformation {
     private String org;
     private String as;
     private String query;
+
 }

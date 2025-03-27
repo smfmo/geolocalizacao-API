@@ -1,5 +1,4 @@
 package com.geolocalizacaoip.samuel.controller;
-
 import com.geolocalizacaoip.samuel.model.IpInformation;
 import com.geolocalizacaoip.samuel.service.IpInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,10 @@ public class IpInformationController {
     }
 
     @GetMapping("/ipinfo")
-    public String getIpInfo(@RequestParam(name = "ip", required = false) String ip, Model model) {
-        System.out.println("IP recebido: " + ip); // Log para depuração
+    public String getIpInfo(@RequestParam(name = "ip") String ip,
+                            Model model) {
+        System.out.println("IP recebido: " + ip); // Log de depuração
+
         if (ip != null && !ip.isEmpty()) {
             IpInformation ipInfo = ipInformationService.BuscarIp(ip);
             model.addAttribute("ipInfo", ipInfo);

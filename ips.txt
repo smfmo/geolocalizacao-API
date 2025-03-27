@@ -1,0 +1,4 @@
+ip Datacenter google: 8.8.8.8
+ip microsoft: 168.63.129.16
+meu ip: 2804:8aa4:e022:6400:3e7e:e5b1:a597:4
+ip da tim: 152.233.128.0
